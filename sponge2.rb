@@ -1,5 +1,6 @@
 # Name of Song: Spongebob Theme Song
 # Sheet Music and BPM use:https://www.sheetmusicdirect.com/es-ES/se/ID_No/102881/Product.aspx
+# Changed BPM for a better song
 use_bpm 150
 live_loop :sponge do
   use_synth :tri
