@@ -3,10 +3,10 @@
 use_bpm 130
 x = 0.025
 y2 = :drum_cymbal_hard
-
+#This is my build which helps amp up the song
 my_lol = [:e4, :d4, :d4, :e4, :d4, :b3, :g3, :b3, :d4, :e4, :g4]
 index = 0
-
+#I set my index so it can start at 0 (e4) all the way to the g4 (10)
 10.times do
   sample y2,amp: x
   sleep 1
