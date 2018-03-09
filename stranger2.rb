@@ -9,6 +9,7 @@ live_loop:homerun do
   stranger_okay :e2
   stranger_okay :g2
   stranger_okay :b2
+  #second line of 4 notes
   stranger_okay :c3
   stranger_okay :b2
   stranger_okay :g2
