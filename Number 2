@@ -1,0 +1,58 @@
+use_bpm 104
+crying = "C:/Users/kenneth_garcia/Desktop/drums.wav"
+leave_before = "C:/Users/kenneth_garcia/Documents/Audacity/Leave.wav"
+use_synth :pretty_bell
+array_cry = [:e,:e,:f,:d,:f,:b,:d4,:f4,:e,:d,:b,:b,:c,:f4,:e4,:g,:a,:c,:c,:d,:e,:d4,:g4,:f4,:e4,:d4,:c,:d4,:e4,:f4,:a,:g,:b,:a]
+array_sleep = [0.5, 0.5, 1, 0.5, 0.5, 1, 1, 0.5, 0.5, 1, 0.5, 1, 0.5, 0.5, 0.5 ,1, 1, 0.5, 0.5,1, 0.5, 1, 0.5]
+index = 0
+i=0
+x = 1
+
+define :build_cry do
+  10.times do
+    sample :bass_woodsy_c, amp: x
+    sleep 1
+    x = x + 0.25
+  end
+end
+1.times do
+  play build_cry
+end
+
+my_oof = [:es2,:ds4,:g4,:a4]
+live_loop :morty do
+  a = rrand_i(0,3)
+  print a
+  play my_oof [a]
+  sleep 0.5
+end
+
+
+sample crying
+sleep 35
+#I am sleeping it for 35 notes because when the live loop startes it is perfectly alligned with the sample
+live_loop :crying do
+  index = 0
+  play array_cry[i] , amp:10
+  sleep array_sleep[index]
+  index = index +1
+  i=i+1
+end
+
+sleep 35
+define :aleks do |note, note1, note2, s|
+  15.times do
+    play note
+    sleep s
+    play note1
+    sleep s
+    play note2
+    sleep s
+  end
+end
+1.times do
+  aleks :d2, :e2, :f2, 0.5
+end
+sleep 0.25
+
+sample leave_before
