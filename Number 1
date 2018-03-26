@@ -1,0 +1,41 @@
+use_bpm 104
+septemba = "C:/Users/kenneth_garcia/Documents/Audacity/september.wav"
+use_synth :pretty_bell
+array_sep = [:f4,:a4,:b4,:c5,:c5,:e3,:c5,:e5,:f5,:b4,:a4,:a4,:c5,:c5,:c5,:a4,:a4,:c5,:e5,:f5,:b4,:a4,:c5,:c5,:e3,:a4,:b4,:c5,:e5,:f5,:b4,:b4,:c5,:b4]
+array_j = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 0.5]
+index = 0
+i=0
+x = 1
+
+define :build_pls do
+  10.times do
+    sample :drum_cowbell, amp: x
+    sleep 1
+    x = x + 0.25
+  end
+end
+1.times do
+  play build_pls
+end
+
+
+sample septemba
+sleep 30
+
+
+live_loop :september do
+  34.times do
+    play array_sep[index]
+    sleep array_j[index]
+    index = index + 1
+  end
+  index = 0
+end
+use_synth :dull_bell
+array_after = [:ds3,:e3,:a4,:cs2]
+live_loop :squanchin do
+  woww = rrand_i(0, 3)
+  print woww
+  play array_after [woww]
+  sleep 0.5
+end
