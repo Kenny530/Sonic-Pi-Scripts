@@ -1,0 +1,16 @@
+define :aleks do |note, note1, note2, s|
+  15.times do
+    play note
+    sleep s
+    play note1
+    sleep s
+    play note2
+    sleep s
+  end
+end
+1.times do
+  aleks :d2, :e2, :f2, 0.5
+end
+sleep 0.25
+
+sample leave_before
