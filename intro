@@ -1,0 +1,10 @@
+define :build_pls do
+  10.times do
+    sample :drum_cowbell, amp: x
+    sleep 1
+    x = x + 0.25
+  end
+end
+1.times do
+  play build_pls
+end
