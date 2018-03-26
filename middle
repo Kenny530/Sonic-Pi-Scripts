@@ -1,0 +1,8 @@
+use_synth :dull_bell
+array_after = [:ds3,:e3,:a4,:cs2]
+live_loop :squanchin do
+  woww = rrand_i(0, 3)
+  print woww
+  play array_after [woww]
+  sleep 0.5
+end
