@@ -41,4 +41,4 @@ live_loop :squanchin do
   play array_after [woww]
   sleep 0.5
 end
-#I have a parameterized function here which allows me to have a random within the loop. 
+#With this rrand it gives me an option to have a nice transition with four different types of notes.
