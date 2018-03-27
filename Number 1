@@ -17,11 +17,11 @@ end
 1.times do
   play build_pls
 end
-
+#I put my builed into a function in order to build 10 times only 1 time. 
 
 sample septemba
 sleep 30
-
+#The sleep is 30 here so the code for the song will be lined up with the sample
 
 live_loop :september do
   34.times do
@@ -31,6 +31,8 @@ live_loop :september do
   end
   index = 0
 end
+#The loop is set to do 34 times because there are 34 different notes. At the end of the loop I set Index to 0 so the loop would stop after that.
+
 use_synth :dull_bell
 array_after = [:ds3,:e3,:a4,:cs2]
 live_loop :squanchin do
@@ -39,3 +41,4 @@ live_loop :squanchin do
   play array_after [woww]
   sleep 0.5
 end
+#I have a parameterized function here which allows me to have a random within the loop. 
