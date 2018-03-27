@@ -17,7 +17,7 @@ end
 1.times do
   play build_pls
 end
-#I put my builed into a function in order to build 10 times only 1 time. 
+#I put my build into a function in order to build 10 times only 1 time. 
 
 sample septemba
 sleep 30
